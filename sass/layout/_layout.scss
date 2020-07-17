@@ -1,0 +1,68 @@
+.header {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba($color-black, .8), rgba($color-black, .6)),url(../images/bg.jpeg) center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.brand {
+    @include center(15%);
+    display: flex;
+    align-items: center;
+
+    &__logo {
+        font-size: 7rem;
+        color: $color-primary;
+        display: block;
+        width: 11rem;
+        height: 11rem;
+        border: 3px solid $color-primary;
+        border-radius: 50%;
+        @include flexLayout;
+        margin-right: 2rem;
+        text-decoration: none;
+    }
+}
+
+.footer {
+    padding: 7rem 0;
+    @include flexLayout;
+    flex-direction: column;
+
+    &-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 7rem;
+    }
+
+    .social-media {
+        display: flex;
+        width: 30rem;
+        justify-content: space-around;
+        margin-bottom: 7rem;
+
+        &-item {
+            list-style: none;
+        }
+
+        &-link {
+            text-decoration: none;
+            font-size: 3rem;
+            color: $color-secondary;
+            transition: color .2s;
+
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &-copyright-paragraph {
+        font-family: $font-josefin;
+        font-size: 1.5rem;
+        color: $color-secondary;
+        @include textStyle;
+    }
+}

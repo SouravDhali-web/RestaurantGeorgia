@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+
+
+    @media (max-width:1358px) {
+        font-size: 50%;
+    }
+    @media (max-width: 1084px){
+        font-size: 45%;
+    }
+    @media (max-width: 976px){
+        font-size: 40%;
+    }
+}
+body {
+    background-color: $color-dark;
+}

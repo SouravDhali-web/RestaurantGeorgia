@@ -1,0 +1,196 @@
+.main-name {
+    font-family: $font-josefin;
+    font-size: 5rem;
+    color: $color-secondary;
+    @include textStyle;
+
+    
+}
+
+
+.sub-name {
+    font-family: $font-josefin;
+    font-size: 1.8rem;
+    color: $color-secondary;
+    text-align: center;
+    @include textStyle;
+
+}
+
+.header-banner {
+    @include center(50%);
+    text-align: center;
+}
+
+
+.main-head {
+    font-family: $font-dancing;
+    font-size: 10rem;
+    font-weight: 300;
+    color: $color-primary;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
+.sub-head {
+    font-family: $font-josefin;
+    font-size: 6rem;
+    font-weight: 300;
+    color: $color-secondary;
+    margin-bottom: 8rem;
+    text-align: center;
+
+    @media (max-width:1024px) {
+        margin-bottom: 5rem;
+    }
+}
+.main-btn,
+.main-btn:link,
+.main-btn:active
+ {
+    width: 17rem;
+    height: 4.5rem;
+    font-family: $font-dancing;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $color-secondary;
+    background-color: transparent;
+    border: 1px solid $color-secondary;
+    outline: none;
+    cursor: pointer;
+    transition: all .3s;
+
+
+    &:hover {
+       background-color: $color-primary;
+        color: $color-dark;
+        border: 1px solid $color-primary;
+    }
+}
+
+.left-img {
+    width: 50%;
+    position: absolute;
+    box-shadow: 0 15px 60px rgba($color-black, $alpha: .4);
+    opacity: .7;
+    border-radius: 1rem;
+}
+
+.left-img-1 {
+    top: 15%;
+    left: 15%;
+}
+.left-img-2 {
+    top: 35%;
+    left: 25%;
+}
+.left-img-3 {
+    top: 55%;
+    left: 35%;
+}
+
+
+.navbar {
+    position: relative;
+    z-index: 100;
+    &-navigation {
+        display: flex;
+
+
+        &-left {
+            width: 50vw;
+            height: 100vh;
+            background-color: $color-dark;
+            position: fixed;
+            left: -50vw;
+            transition: left .8s cubic-bezier(1, 0, 0,1);
+        }
+
+        &-right {
+            width: 50vw;
+            height: 100vh;
+            background-color: $color-tertiary;
+            position: fixed;
+            right: -50vw;
+            @include flexLayout;
+            transition: right .8s cubic-bezier(1, 0, 0,1);
+        }
+    }
+
+}
+
+.nav-list {
+    &-item {
+        list-style: none;
+    }
+
+    &-link {
+        font-family: $font-dancing;
+        font-size: 5rem;
+        @include textStyle;
+        color: $color-secondary;
+        text-decoration: none;
+        display: block;
+        margin: 2rem;
+        text-align: center;
+        transition: all .3s;
+
+
+        &:hover {
+            color: $color-primary;
+            letter-spacing: 4px;
+        }
+
+    }
+}
+
+.hamburger-menu {
+    width: 4rem;
+    height: 4rem;
+    z-index: 100;
+    position: fixed;
+    top: 10%;
+    right: 5%;
+
+    .menu {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+        transition: transform .5s;
+
+        &-line {
+            width: 100%;
+            height: 4px;
+            background-color: $color-primary;
+            transition: all .4s .4s;
+            transform-origin: right;
+        }
+    }
+}
+
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-left {
+    left: 0;
+}
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right {
+    right: 0;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu {
+    transform: rotateZ(90deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-1 {
+    transform: rotateZ(-40deg);
+}
+.checkbox:checked ~ .hamburger-menu .menu-line-2 {
+    opacity: 0;
+}
+.checkbox:checked ~ .hamburger-menu .menu-line-3 {
+    transform: rotateZ(40deg);
+}
